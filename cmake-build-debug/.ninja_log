@@ -1,0 +1,15 @@
+# ninja log v6
+2	191	7551577965744598	build.ninja	f203505fad0197e8
+10	1008	7551569831560059	CMakeFiles/pratica04.dir/impressora.cpp.obj	c597af86ece4e6d
+3	362	7551570519185822	CMakeFiles/pratica04.dir/main.cpp.obj	a42aab8aaa7ca360
+362	429	7551570522782820	pratica04.exe	54ec987321314db2
+5	387	7551563949833928	CMakeFiles/pratica04.dir/polonesa.cpp.obj	9c24acc619b345b7
+4	371	7551563473534193	CMakeFiles/pratica04.dir/pilha_teste.cpp.obj	d90a8c670a246e04
+7	395	7551569831540056	CMakeFiles/pratica04.dir/fila_teste.cpp.obj	b5ad6c51bae91313
+4	389	7551578167156966	CMakeFiles/pratica04.dir/main.cpp.obj	a42aab8aaa7ca360
+7	402	7551578167186951	CMakeFiles/pratica04.dir/lista_char.cpp.obj	e7b416d55b0b6972
+10	430	7551578167217102	CMakeFiles/pratica04.dir/lista_teste.cpp.obj	31a6a453f7a869ff
+431	599	7551578171422563	pratica04.exe	587bf76ffe9d3960
+5	429	7551578418281622	CMakeFiles/pratica04.dir/lista_char.cpp.obj	e7b416d55b0b6972
+8	430	7551578418316761	CMakeFiles/pratica04.dir/lista_teste.cpp.obj	31a6a453f7a869ff
+430	507	7551578422532395	pratica04.exe	587bf76ffe9d3960
