@@ -1,4 +1,5 @@
 #include <iostream>
+#include "pilha.h"
 #include "pilha_array.h"
 #include "pilha_ligada.h"
 
@@ -67,7 +68,7 @@ void testarPilha() {
 
 int mainPilha() {
 	cerr << "Testando Pilha com array:" << endl;
-	testarPilha<Pilha<int>>();
+	testarPilha<PilhaArray<int>>();
 
 	cerr << "\nTestando Pilha com ponteiros:" << endl;
 	testarPilha<PilhaLigada<int>>();

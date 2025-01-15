@@ -1,4 +1,5 @@
 #include <iostream>
+#include "pilha.h"
 #include "pilha_array.h"
 #include "pilha_ligada.h"
 
@@ -64,8 +65,8 @@ int polonesa(const char *exp) {
 
 int mainPol() {
 	cerr << "Testando expressao polonesa com array:" << endl;
-	cerr << "Resultado 1 (array): " << polonesa<Pilha<int>>("23+31-*") << endl;
-	cerr << "Resultado 2 (array): " << polonesa<Pilha<int>>("93*42/-") << endl;
+	cerr << "Resultado 1 (array): " << polonesa<PilhaArray<int>>("23+31-*") << endl;
+	cerr << "Resultado 2 (array): " << polonesa<PilhaArray<int>>("93*42/-") << endl;
 
 	cerr << "\nTestando expressao polonesa com ponteiros:" << endl;
 	cerr << "Resultado 3 (ponteiros): " << polonesa<PilhaLigada<int>>("23+31-*") << endl;

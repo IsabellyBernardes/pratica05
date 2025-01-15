@@ -1,14 +1,12 @@
 #ifndef PILHA_LIGADA_H
 #define PILHA_LIGADA_H
 
+#include "pilha.h"
 #include <stdexcept>
 
-using namespace std;
-
 template <class T>
-class PilhaLigada {
+class PilhaLigada : public Pilha<T> {
 private:
-    
     class No {
     public:
         T dado;
@@ -20,10 +18,7 @@ private:
         }
     };
 
-    No* topo; 
-    int tamanhoAtual;
-    int capacidade;
-
+    No* topo;
 public:
     PilhaLigada(int capacidade) {
         this->capacidade = capacidade;
@@ -31,34 +26,34 @@ public:
         this->tamanhoAtual = 0;
     }
 
-    ~PilhaLigada() {
+    ~PilhaLigada() override {
         while (topo != nullptr) {
             desempilha();
         }
     }
 
-    void empilha(T item) {
-        if (tamanhoAtual >= capacidade) {
-            throw runtime_error("Estouro da pilha");
+    void empilha(T item) override {
+        if (this->estaCheia()) {
+            throw std::runtime_error("Estouro da pilha");
         }
         topo = new No(item, topo);
-        tamanhoAtual++;
+        this->tamanhoAtual++;
     }
 
-    T desempilha() {
-        if (tamanhoAtual == 0) {
-            throw runtime_error("Pilha vazia");
+    T desempilha() override {
+        if (this->estaVazia()) {
+            throw std::runtime_error("Pilha vazia");
         }
         No* tmp = topo;
         T dado = topo->dado;
         topo = topo->prox;
         delete tmp;
-        tamanhoAtual--;
+        this->tamanhoAtual--;
         return dado;
     }
 
-    int tamanho() const {
-        return tamanhoAtual;
+    int tamanho() const override {
+        return this->tamanhoAtual;
     }
 };
 
