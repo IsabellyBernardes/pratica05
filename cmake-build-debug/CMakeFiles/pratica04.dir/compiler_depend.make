@@ -979,6 +979,7 @@ CMakeFiles/pratica04.dir/pilha_teste.cpp.obj: C:/Users/isabe/CLionProjects/prati
   C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/x86_64-w64-mingw32/include/vadefs.h \
   C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/x86_64-w64-mingw32/include/wchar.h \
   C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/x86_64-w64-mingw32/include/wctype.h \
+  C:/Users/isabe/CLionProjects/pratica04/pilha.h \
   C:/Users/isabe/CLionProjects/pratica04/pilha_array.h \
   C:/Users/isabe/CLionProjects/pratica04/pilha_ligada.h
 
@@ -1133,6 +1134,7 @@ CMakeFiles/pratica04.dir/polonesa.cpp.obj: C:/Users/isabe/CLionProjects/pratica0
   C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/x86_64-w64-mingw32/include/vadefs.h \
   C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/x86_64-w64-mingw32/include/wchar.h \
   C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/x86_64-w64-mingw32/include/wctype.h \
+  C:/Users/isabe/CLionProjects/pratica04/pilha.h \
   C:/Users/isabe/CLionProjects/pratica04/pilha_array.h \
   C:/Users/isabe/CLionProjects/pratica04/pilha_ligada.h
 
@@ -1564,6 +1566,8 @@ C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/1
 C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/variant:
 
 C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector:
+
+C:/Users/isabe/CLionProjects/pratica04/pilha.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h:
 
