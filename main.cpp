@@ -12,16 +12,16 @@ int mainChar();
 int main() {
 
 /**** Pilha */
-    //mainPilha();
-//  mainPol();
+    mainPilha();
+    //mainPol();
 
 /**** Fila */
-//    mainFila();
-//    mainImp();
+    //mainFila();
+    //mainImp();
 
 /**** Lista */
-    mainLista();
-//    mainChar();
+    //mainLista();
+    //mainChar();
 
     return 0;
 }

@@ -1,20 +1,14 @@
-/*
- * pilha.cpp
- *
- *  Created on: 10 de mar de 2020
- *      Author: IFPE
- */
-
 #include <iostream>
-
-#include "pilha.h"
+#include "pilha_array.h"
+#include "pilha_ligada.h"
 
 #define MAX 10
 
 using namespace std;
 
-int mainPilha() {
-	Pilha<int> pilha(MAX);
+template <typename PilhaTipo>
+void testarPilha() {
+	PilhaTipo pilha(MAX);
 
 	try {
 		cerr << "Testando empilha() [normal]: ";
@@ -68,9 +62,15 @@ int mainPilha() {
 		cerr << "OK (" << ex.what() << ")" << endl;
 	}
 
-    cerr << "*** TODOS OS TESTES OK! *** " << endl;
+	cerr << "*** TODOS OS TESTES OK! *** " << endl;
+}
+
+int mainPilha() {
+	cerr << "Testando Pilha com array:" << endl;
+	testarPilha<Pilha<int>>();
+
+	cerr << "\nTestando Pilha com ponteiros:" << endl;
+	testarPilha<PilhaLigada<int>>();
 
 	return 0;
 }
-
-

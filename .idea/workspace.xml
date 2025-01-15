@@ -30,50 +30,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ceaccde7-6e31-49bc-ae13-2abfe50d6f68" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-a5b6d84a3f66f18d0b1d.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/DependInfo.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/build.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/cmake_clean.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/compiler_depend.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/compiler_depend.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/depend.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/flags.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/link.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/linkLibs.rsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/objects1.rsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/progress.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fila_ligada.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lista_ligada.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pilha_ligada.h" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../pratica222/.idea/pratica222.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pratica03" beforeDir="false" afterPath="$PROJECT_DIR$/../pratica03" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-275e7fd7266fa99b62a2.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-dd5bb380d5a42f99e0b1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-71a56d3a2a5309617264.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-12-06T03-09-56-0597.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-12-06T04-00-03-0920.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdC/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdCXX/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/fila_teste.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/impressora.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/lista_char.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/lista_teste.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/main.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/pilha_teste.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/polonesa.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/compiler_depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pratica04.dir/compiler_depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/pratica04.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/pratica04.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fila.h" beforeDir="false" afterPath="$PROJECT_DIR$/fila_array.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fila_teste.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/fila_teste.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/impressora.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/impressora.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lista.h" beforeDir="false" afterPath="$PROJECT_DIR$/lista_array.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lista_char.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lista_char.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lista_teste.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lista_teste.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pilha.h" beforeDir="false" afterPath="$PROJECT_DIR$/pilha_array.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pilha_teste.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/pilha_teste.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polonesa.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/polonesa.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pratica222/veiculo.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../pratica222/veiculo.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pratica222/veiculo.h" beforeDir="false" afterPath="$PROJECT_DIR$/../pratica222/veiculo.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../untitled/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-765ed88bb4e100188537.json" beforeDir="false" />
@@ -116,7 +92,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/fila_teste.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lista_char.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/lista_teste.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lista_teste.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/pilha_teste.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/polonesa.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -177,7 +153,10 @@
       <workItem from="1733452239890" duration="3249000" />
       <workItem from="1733457597862" duration="13000" />
       <workItem from="1733457687062" duration="31000" />
-      <workItem from="1736772818072" duration="329000" />
+      <workItem from="1736772818072" duration="21965000" />
+      <workItem from="1736873888754" duration="3626000" />
+      <workItem from="1736904761688" duration="1163000" />
+      <workItem from="1736905944151" duration="3874000" />
     </task>
     <servers />
   </component>

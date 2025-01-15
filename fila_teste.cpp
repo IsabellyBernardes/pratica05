@@ -6,14 +6,16 @@
  */
 
 #include <iostream>
-#include "fila.h"
+#include "fila_array.h"
+#include "fila_ligada.h"
 
 #define MAX 100
 
 using namespace std;
 
-int mainFila() {
-	Fila<int> fila(MAX);
+template <typename FilaTipo>
+void testarFila() {
+	FilaTipo fila(MAX);
 
 	try {
 		cerr << "Testando enfileira() [normal]: ";
@@ -38,24 +40,23 @@ int mainFila() {
 		fila.enfileira(MAX + 1);
 		cerr << "FALHOU!" << endl;
 		exit(1);
-	} catch (std::runtime_error & ex) {
+	} catch (std::runtime_error &ex) {
 		cerr << "OK (" << ex.what() << ")" << endl;
 	}
 
 	cerr << "Testando desenfileira() [normal]: ";
-    try {
-        for (int i = 0; i < MAX; i++) {
-            if (fila.desenfileira() != i * 3) {
-                cerr << "FALHOU em " << i << endl;
-                exit(1);
-            }
-        }
-    } catch (...) {
-        cerr << "FALHOU com exceção. " << endl;
-        exit(1);
-    }
+	try {
+		for (int i = 0; i < MAX; i++) {
+			if (fila.desenfileira() != i * 3) {
+				cerr << "FALHOU em " << i << endl;
+				exit(1);
+			}
+		}
+	} catch (...) {
+		cerr << "FALHOU com exceção. " << endl;
+		exit(1);
+	}
 	cerr << "OK" << endl;
-
 
 	cerr << "Testando tamanho() [vazia]: ";
 	if (fila.tamanho() != 0) {
@@ -63,7 +64,6 @@ int mainFila() {
 		exit(1);
 	}
 	cerr << "OK" << endl;
-
 
 	try {
 		cerr << "Testando desenfileira() [underflow]: ";
@@ -74,12 +74,15 @@ int mainFila() {
 		cerr << "OK (" << ex.what() << ")" << endl;
 	}
 
-    cerr << "*** TODOS OS TESTES OK! *** " << endl;
-
-    return 0;
+	cerr << "*** TODOS OS TESTES OK! *** " << endl;
 }
 
+int mainFila() {
+	cerr << "Testando Fila com array:" << endl;
+	testarFila<Fila<int>>();
 
+	cerr << "\nTestando Fila com ponteiros:" << endl;
+	testarFila<FilaLigada<int>>();
 
-
-
+	return 0;
+}
