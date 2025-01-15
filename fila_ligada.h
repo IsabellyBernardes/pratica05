@@ -8,7 +8,7 @@ using namespace std;
 template <class T>
 class FilaLigada {
 private:
-    // Classe interna para representar os nós da fila
+    
     class No {
     public:
         T dado;
@@ -20,8 +20,8 @@ private:
         }
     };
 
-    No* inicio; // Ponteiro para o primeiro elemento
-    No* fim;   // Ponteiro para o último elemento
+    No* inicio; 
+    No* fim;   
     int tamanhoAtual;
     int capacidade;
 

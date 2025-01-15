@@ -9,7 +9,7 @@ using namespace std;
 template <class T>
 class ListaLigada {
 private:
-    // Classe para representar os nós da lista
+    
     class No {
     public:
         T dado;
@@ -21,22 +21,21 @@ private:
         }
     };
 
-    No* inicio; // Ponteiro para o primeiro nó da lista
+    No* inicio; 
     int tamanhoAtual;
 
 public:
-    // Construtor padrão
+    
     ListaLigada() {
         inicio = nullptr;
         tamanhoAtual = 0;
     }
 
-    // Construtor com parâmetro de capacidade (compatibilidade com Lista baseada em arrays)
+    // Compatibilidade com Lista baseada em arrays
     ListaLigada(int capacidade) : ListaLigada() {
-        (void)capacidade; // Ignora o parâmetro de capacidade
+        (void)capacidade; 
     }
 
-    // Destrutor
     ~ListaLigada() {
         while (inicio != nullptr) {
             remove(1);

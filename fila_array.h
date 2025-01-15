@@ -6,10 +6,10 @@ using namespace std;
 template <class T>
 class Fila { //usa o padrão FIFO
 private:
-    T* items; // Array de itens
-    int capacidade; // Capacidade máxima da fila
-    int tamanhoAtual; // Número de itens atualmente na fila
-    int inicio; // Índice do início da fila
+    T* items; 
+    int capacidade; 
+    int tamanhoAtual;
+    int inicio; 
     int fim;
 public:
     Fila(int cap) {

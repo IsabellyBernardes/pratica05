@@ -8,7 +8,7 @@ using namespace std;
 template <class T>
 class PilhaLigada {
 private:
-    // Classe aninhada para os nós da pilha
+    
     class No {
     public:
         T dado;
@@ -20,7 +20,7 @@ private:
         }
     };
 
-    No* topo; // Ponteiro para o topo da pilha
+    No* topo; 
     int tamanhoAtual;
     int capacidade;
 

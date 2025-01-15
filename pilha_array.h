@@ -15,23 +15,23 @@ public:
         this->items = new T[capacidade];
         this->topo = -1; // Para a pilha começar vazia
     }
-    ~Pilha() { // Destrutor: libera o espaço usado pela pilha
+    ~Pilha() { 
         delete[] items;
     }
-    void empilha(T item) { // Adiciona um item no topo da pilha
+    void empilha(T item) { 
         if (topo >= capacidade - 1) {
             throw runtime_error("Estouro da pilha");
         }
-        items[++topo] = item; // Coloca o item no topo e atualiza o índice
+        items[++topo] = item; 
     }
     T desempilha() {
         if (topo < 0) {
             throw runtime_error("Pilha vazia");
         }
-        return items[topo--]; // Remove o item do topo e atualiza o índice
+        return items[topo--]; 
     }
-    int tamanho() { // Retorna quantos itens estão atualmente na pilha
-        return topo + 1; // O topo começa em -1, então soma-se 1 para obter o total
+    int tamanho() { 
+        return topo + 1; 
     }
 };
 
