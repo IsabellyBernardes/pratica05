@@ -16,7 +16,7 @@ using namespace std;
 
 template <typename FilaTipo>
 void testarFila() {
-	FilaTipo fila(MAX); // Cria a fila com a implementação concreta
+	FilaTipo fila(MAX); 
 
 	try {
 		cerr << "Testando enfileira() [normal]: ";
@@ -80,10 +80,10 @@ void testarFila() {
 
 int mainFila() {
 	cerr << "Testando Fila com array:" << endl;
-	testarFila<FilaArray<int>>();  // Altere para FilaArray<int>
+	testarFila<FilaArray<int>>();  
 
 	cerr << "\nTestando Fila com ponteiros:" << endl;
-	testarFila<FilaLigada<int>>();  // Altere para FilaLigada<int>
+	testarFila<FilaLigada<int>>();  
 
 	return 0;
 }
