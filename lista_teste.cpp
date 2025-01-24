@@ -1,10 +1,11 @@
 #include <iostream>
 #include "lista_array.h"
 #include "lista_ligada.h"
-
-#define MAX 100
+#include "lista.h"
 
 using namespace std;
+
+const int MAX = 100;  // Tamanho máximo para os testes
 
 template <typename ListaTipo>
 void testaTamanho(ListaTipo& lista, const char* subcaso, int tamanho) {
@@ -159,7 +160,7 @@ void testarLista() {
 
 int mainLista() {
     cerr << "Testando Lista com array:" << endl;
-    testarLista<Lista<int>>();
+    testarLista<ListaArray<int>>();
 
     cerr << "\nTestando Lista com ponteiros:" << endl;
     testarLista<ListaLigada<int>>();

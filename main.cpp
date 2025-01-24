@@ -12,11 +12,11 @@ int mainChar();
 int main() {
 
 /**** Pilha */
-    mainPilha(); //g++ main.cpp pilha_teste.cpp -o ./programa
+    //mainPilha(); //g++ main.cpp pilha_teste.cpp -o ./programa
     //mainPol(); //g++ main.cpp polonesa.cpp -o ./programa
 
 /**** Fila */
-    //mainFila(); //g++ main.cpp fila_teste.cpp -o ./programa
+    mainFila(); //g++ main.cpp fila_teste.cpp -o ./programa
     //mainImp(); //g++ main.cpp impressora.cpp -o ./programa
 
 /**** Lista */

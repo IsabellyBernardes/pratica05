@@ -3,41 +3,41 @@
 
 #include <iostream>
 #include <stdexcept>
+#include "lista.h"
+
 using namespace std;
 
 template <class T>
-class Lista {
+class ListaArray : public Lista<T> {
 private:
     T* array;
     int capacidade;
     int tamanhoAtual;
 
 public:
-    Lista(int capacidade) {
-        this->capacidade = capacidade;
+    ListaArray(int capacidade) : capacidade(capacidade), tamanhoAtual(0) {
         array = new T[capacidade];
-        tamanhoAtual = 0;
     }
 
-    ~Lista() {
+    ~ListaArray() {
         delete[] array;
     }
 
-    void adiciona(const T& item) {
+    void adiciona(const T& item) override {
         if (tamanhoAtual == capacidade) {
             throw runtime_error("Lista cheia");
         }
         array[tamanhoAtual++] = item;
     }
 
-    T pega(int idx) const {
+    T pega(int idx) const override {
         if (idx < 1 || idx > tamanhoAtual) {
             throw runtime_error("Indice invalido");
         }
         return array[idx - 1];
     }
 
-    void insere(int idx, const T& item) {
+    void insere(int idx, const T& item) override {
         if (idx < 1 || idx > tamanhoAtual + 1) {
             throw runtime_error("Indice invalido");
         }
@@ -51,7 +51,7 @@ public:
         tamanhoAtual++;
     }
 
-    void remove(int idx) {
+    void remove(int idx) override {
         if (idx < 1 || idx > tamanhoAtual) {
             throw runtime_error("Indice invalido");
         }
@@ -61,14 +61,14 @@ public:
         tamanhoAtual--;
     }
 
-    void exibe() const {
+    void exibe() const override {
         for (int i = 0; i < tamanhoAtual; i++) {
             cerr << array[i] << " ";
         }
         cerr << endl;
     }
 
-    int tamanho() const {
+    int tamanho() const override {
         return tamanhoAtual;
     }
 };

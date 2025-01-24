@@ -1,18 +1,19 @@
-#ifndef FILA_H
-#define FILA_H
-using namespace std;
-//deixa mais livre o atendimento para novas funções como se fosse um atendimento de restaurante
+#ifndef FILA_ARRAY_H
+#define FILA_ARRAY_H
 
+#include "fila.h"
+//deixa mais livre o atendimento para novas funções como se fosse um atendimento de restaurante
 template <class T>
-class Fila { //usa o padrão FIFO
+class FilaArray : public Fila<T> {
 private:
-    T* items; 
-    int capacidade; 
+    T* items;
+    int capacidade;
     int tamanhoAtual;
-    int inicio; 
+    int inicio;
     int fim;
+
 public:
-    Fila(int cap) {
+    FilaArray(int cap) {
         capacidade = cap;
         items = new T[capacidade];
         tamanhoAtual = 0;
@@ -20,42 +21,40 @@ public:
         fim = -1;
     }
 
-    ~Fila() {
+    ~FilaArray() {
         delete[] items;
     }
 
-    void enfileira(const T & item) {
+    void enfileira(const T& item) override {
         if (cheia()) {
-            throw runtime_error("Fila cheia"); // Lança exceção se a fila estiver cheia
+            throw runtime_error("Fila cheia");
         }
-        fim = (fim + 1) % capacidade; // Incrementa fim de forma circular
-        //caso dê zero o resto da divisão, faz o fim voltar para zero, para ser o final da capacidade
+        fim = (fim + 1) % capacidade;
         items[fim] = item;
         tamanhoAtual++;
     }
 
-    T desenfileira() {
-        if (vazia()) { throw runtime_error("Fila vazia");
+    T desenfileira() override {
+        if (vazia()) {
+            throw runtime_error("Fila vazia");
         }
         T item = items[inicio];
-        //ele utiliza a ideia de resto da divisão
-        //o resto deve ser zero para funcionar
-        inicio = (inicio + 1) % capacidade; // Incrementa inicio de forma circular
+        inicio = (inicio + 1) % capacidade;
         tamanhoAtual--;
         return item;
     }
 
-    int cheia() {
-        return tamanhoAtual == capacidade;//para fazer o teste de fila cheia, meio que força o erro
+    bool cheia() const override {
+        return tamanhoAtual == capacidade;
     }
 
-    int vazia() {
+    bool vazia() const override {
         return tamanhoAtual == 0;
     }
 
-    int tamanho() {
+    int tamanho() const override {
         return tamanhoAtual;
     }
 };
 
-#endif //FILA_H
+#endif // FILA_ARRAY_H

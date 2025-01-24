@@ -8,6 +8,7 @@
 #include <iostream>
 #include "fila_array.h"
 #include "fila_ligada.h"
+#include "fila.h"
 
 #define MAX 100
 
@@ -15,7 +16,7 @@ using namespace std;
 
 template <typename FilaTipo>
 void testarFila() {
-	FilaTipo fila(MAX);
+	FilaTipo fila(MAX); // Cria a fila com a implementação concreta
 
 	try {
 		cerr << "Testando enfileira() [normal]: ";
@@ -79,10 +80,10 @@ void testarFila() {
 
 int mainFila() {
 	cerr << "Testando Fila com array:" << endl;
-	testarFila<Fila<int>>();
+	testarFila<FilaArray<int>>();  // Altere para FilaArray<int>
 
 	cerr << "\nTestando Fila com ponteiros:" << endl;
-	testarFila<FilaLigada<int>>();
+	testarFila<FilaLigada<int>>();  // Altere para FilaLigada<int>
 
 	return 0;
 }

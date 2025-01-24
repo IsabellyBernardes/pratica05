@@ -1,14 +1,11 @@
 #ifndef FILA_LIGADA_H
 #define FILA_LIGADA_H
 
-#include <stdexcept>
-
-using namespace std;
+#include "fila.h"
 
 template <class T>
-class FilaLigada {
+class FilaLigada : public Fila<T> {
 private:
-    
     class No {
     public:
         T dado;
@@ -20,8 +17,8 @@ private:
         }
     };
 
-    No* inicio; 
-    No* fim;   
+    No* inicio;
+    No* fim;
     int tamanhoAtual;
     int capacidade;
 
@@ -39,7 +36,7 @@ public:
         }
     }
 
-    void enfileira(const T& item) {
+    void enfileira(const T& item) override {
         if (cheia()) {
             throw runtime_error("Fila cheia");
         }
@@ -53,7 +50,7 @@ public:
         tamanhoAtual++;
     }
 
-    T desenfileira() {
+    T desenfileira() override {
         if (vazia()) {
             throw runtime_error("Fila vazia");
         }
@@ -68,15 +65,15 @@ public:
         return dado;
     }
 
-    int cheia() const {
+    bool cheia() const override {
         return tamanhoAtual == capacidade;
     }
 
-    int vazia() const {
+    bool vazia() const override {
         return tamanhoAtual == 0;
     }
 
-    int tamanho() const {
+    int tamanho() const override {
         return tamanhoAtual;
     }
 };

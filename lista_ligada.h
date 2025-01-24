@@ -3,13 +3,13 @@
 
 #include <iostream>
 #include <stdexcept>
+#include "lista.h"
 
 using namespace std;
 
 template <class T>
-class ListaLigada {
+class ListaLigada : public Lista<T> {
 private:
-    
     class No {
     public:
         T dado;
@@ -21,20 +21,12 @@ private:
         }
     };
 
-    No* inicio; 
+    No* inicio;
     int tamanhoAtual;
+    int capacidadeMax;  // Agora a capacidade máxima será configurada pelo construtor
 
 public:
-    
-    ListaLigada() {
-        inicio = nullptr;
-        tamanhoAtual = 0;
-    }
-
-    // Compatibilidade com Lista baseada em arrays
-    ListaLigada(int capacidade) : ListaLigada() {
-        (void)capacidade; 
-    }
+    ListaLigada(int capacidadeMax) : Lista<T>(), inicio(nullptr), tamanhoAtual(0), capacidadeMax(capacidadeMax) {}
 
     ~ListaLigada() {
         while (inicio != nullptr) {
@@ -42,10 +34,8 @@ public:
         }
     }
 
-    static const int CAPACIDADE_MAX = 100;
-
     void adiciona(const T& item) {
-        if (tamanhoAtual >= CAPACIDADE_MAX) {
+        if (tamanhoAtual == capacidadeMax) {
             throw runtime_error("Lista cheia");
         }
 
@@ -62,7 +52,7 @@ public:
         tamanhoAtual++;
     }
 
-    T pega(int idx) const {
+    T pega(int idx) const override {
         if (idx < 1 || idx > tamanhoAtual) {
             throw runtime_error("Indice invalido");
         }
@@ -73,7 +63,7 @@ public:
         return atual->dado;
     }
 
-    void insere(int idx, const T& item) {
+    void insere(int idx, const T& item) override {
         if (idx < 1 || idx > tamanhoAtual + 1) {
             throw runtime_error("Indice invalido");
         }
@@ -92,7 +82,7 @@ public:
         tamanhoAtual++;
     }
 
-    void remove(int idx) {
+    void remove(int idx) override {
         if (idx < 1 || idx > tamanhoAtual) {
             throw runtime_error("Indice invalido");
         }
@@ -112,7 +102,7 @@ public:
         tamanhoAtual--;
     }
 
-    void exibe() const {
+    void exibe() const override {
         No* atual = inicio;
         while (atual != nullptr) {
             cerr << atual->dado << " ";
@@ -121,8 +111,7 @@ public:
         cerr << endl;
     }
 
-
-    int tamanho() const {
+    int tamanho() const override {
         return tamanhoAtual;
     }
 };
