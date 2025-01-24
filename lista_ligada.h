@@ -38,7 +38,7 @@ public:
         if (tamanhoAtual == capacidadeMax) {
             throw runtime_error("Lista cheia");
         }
-
+        //tratamento da lógica para apenas um item (feito)
         No* novo = new No(item);
         if (inicio == nullptr) {
             inicio = novo;
