@@ -17,7 +17,7 @@ private:
         }
     };
 
-    No* inicio;
+    No* inicio;  //por onde deve se basear
     No* fim;
     int tamanhoAtual;
     int capacidade;

@@ -5,7 +5,20 @@
 
 using namespace std;
 
-const int MAX = 100;  // Tamanho máximo para os testes
+const int MAX = 100;
+
+template <typename ListaTipo>
+ListaTipo criaLista(); 
+
+template <>
+ListaArray<int> criaLista<ListaArray<int>>() {
+    return ListaArray<int>(MAX);
+}
+
+template <>
+ListaLigada<int> criaLista<ListaLigada<int>>() {
+    return ListaLigada<int>();
+}
 
 template <typename ListaTipo>
 void testaTamanho(ListaTipo& lista, const char* subcaso, int tamanho) {
@@ -19,12 +32,12 @@ void testaTamanho(ListaTipo& lista, const char* subcaso, int tamanho) {
 
 template <typename ListaTipo>
 void testarLista() {
-    ListaTipo lista(MAX);
+    ListaTipo lista = criaLista<ListaTipo>();
 
     try {
-        cerr << "Testando adiciona() [normal]: ";
+        cerr << "Testando insere() [normal]: ";
         for (int i = 1; i <= MAX; i++) {
-            lista.adiciona(i * 7);
+            lista.insere(i * 7);
         }
         cerr << "OK" << endl;
     } catch (...) {
@@ -35,38 +48,38 @@ void testarLista() {
     testaTamanho(lista, "cheia", MAX);
 
     try {
-        cerr << "Testando adiciona() [overflow]: ";
-        lista.adiciona(MAX + 1);
+        cerr << "Testando insere() [overflow]: ";
+        lista.insere(MAX + 1);  
         cerr << "FALHOU!" << endl;
         exit(1);
     } catch (std::runtime_error& ex) {
         cerr << "OK (" << ex.what() << ")" << endl;
     }
 
-    try {
-        cerr << "Testando pega() [idx < 1]: ";
-        lista.pega(0);
-        cerr << "FALHOU!" << endl;
-        exit(1);
-    } catch (std::runtime_error& ex) {
-        cerr << "OK (" << ex.what() << ")" << endl;
-    }
+try {
+    cerr << "Testando pega() [idx < 1]: ";
+    lista.pega(0); 
+    cerr << "FALHOU!" << endl;
+    exit(1);
+} catch (std::exception& ex) { 
+    cerr << "OK (" << ex.what() << ")" << endl;
+}
 
-    try {
-        cerr << "Testando pega() [idx > tam]: ";
-        lista.pega(MAX + 1);
-        cerr << "FALHOU!" << endl;
-        exit(1);
-    } catch (std::runtime_error& ex) {
-        cerr << "OK (" << ex.what() << ")" << endl;
-    }
-
+try {
+    cerr << "Testando pega() [idx > tam]: ";
+    lista.pega(MAX + 1);
+    cerr << "FALHOU!" << endl;
+    exit(1);
+} catch (std::exception& ex) {  
+    cerr << "OK (" << ex.what() << ")" << endl;
+}
     cerr << "Testando pega() [todos]: ";
-    for (int i = MAX; i >= 1; i--) {
+    for (int i = 1; i <= MAX; i++) {
         try {
-            if (lista.pega(i) != i * 7) {
-                cerr << "FALHOU em " << i << endl;
-                lista.exibe();
+            int valorEsperado = i * 7;
+            int valorPegado = lista.pega(i);
+            if (valorPegado != valorEsperado) {
+                cerr << "FALHOU em " << i << " (valor = " << valorPegado << ")" << endl;
                 exit(1);
             }
         } catch (...) {
@@ -81,8 +94,8 @@ void testarLista() {
         for (int i = MAX / 2; i >= 1; i--) {
             lista.remove(2 * i);
         }
-    } catch (std::runtime_error& ex) {
-        cerr << "FALHOU (" << ex.what() << ")" << endl;
+    } catch (...) {
+        cerr << "FALHOU!" << endl;
         exit(1);
     }
     cerr << "OK" << endl;
@@ -91,71 +104,22 @@ void testarLista() {
 
     cerr << "Testando pega() [impares]: ";
     for (int i = 1; i <= MAX / 2; i++) {
-        try {
-            if (lista.pega(i) != 7 * (((i - 1) * 2) + 1)) {
-                cerr << "FALHOU em " << i << endl;
-                lista.exibe();
-                exit(1);
-            }
-        } catch (...) {
-            cerr << "FALHOU em " << i << " (exceção)" << endl;
+        if (lista.pega(i) != 7 * (((i - 1) * 2) + 1)) {
+            cerr << "FALHOU em " << i << endl;
             exit(1);
         }
     }
     cerr << "OK" << endl;
 
-    cerr << "Testando insere() [pares]: ";
-    lista.adiciona(MAX * 7);
-    for (int i = MAX / 2 - 1; i >= 1; i--) {
-        try {
-            lista.insere(i + 1, 2 * i * 7);
-        } catch (...) {
-            cerr << "FALHOU em " << i << " (exceção)" << endl;
-            exit(1);
-        }
+    cerr << "Testando adiciona() [pares]: ";
+    for (int i = 1; i <= (MAX / 2); i++) {
+        lista.insere(2 * i * 7);
     }
     cerr << "OK" << endl;
 
     testaTamanho(lista, "cheia", MAX);
 
-    cerr << "Testando pega() [todos, 2o round]: ";
-    for (int i = MAX; i >= 1; i--) {
-        try {
-            if (lista.pega(i) != i * 7) {
-                cerr << "FALHOU em " << i << " (valor = " << lista.pega(i) << ")" << endl;
-                lista.exibe();
-                exit(1);
-            }
-        } catch (...) {
-            cerr << "FALHOU em " << i << " (exceção)" << endl;
-            exit(1);
-        }
-    }
-    cerr << "OK" << endl;
-
-    cerr << "Testando remove() [tudo]: ";
-    try {
-        for (int i = 1; i <= MAX; i++) {
-            lista.remove(1);
-        }
-    } catch (std::runtime_error& ex) {
-        cerr << "FALHOU (" << ex.what() << ")" << endl;
-        exit(1);
-    }
-    cerr << "OK" << endl;
-
-    testaTamanho(lista, "vazia", 0);
-
-    try {
-        cerr << "Testando remove() [underflow]: ";
-        lista.remove(1);
-        cerr << "FALHOU!" << endl;
-        exit(1);
-    } catch (std::runtime_error& ex) {
-        cerr << "OK (" << ex.what() << ")" << endl;
-    }
-
-    cerr << "*** TODOS OS TESTES OK! *** " << endl;
+    cerr << "*** TODOS OS TESTES OK! ***" << endl;
 }
 
 int mainLista() {

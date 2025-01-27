@@ -1,118 +1,102 @@
 #ifndef LISTA_LIGADA_H
 #define LISTA_LIGADA_H
 
-#include <iostream>
-#include <stdexcept>
 #include "lista.h"
+#include <stdexcept>
 
-using namespace std;
-
-template <class T>
+template <typename T>
 class ListaLigada : public Lista<T> {
 private:
-    class No {
-    public:
+    int capacidadeMaxima;  
+    struct No {
         T dado;
-        No* prox;
-
-        No(T dado, No* prox = nullptr) {
-            this->dado = dado;
-            this->prox = prox;
-        }
+        No* proximo;
+        No(const T& dado) : dado(dado), proximo(nullptr) {}
     };
 
     No* inicio;
+    No* fim;
     int tamanhoAtual;
-    int capacidadeMax;  // Agora a capacidade máxima será configurada pelo construtor
 
 public:
-    ListaLigada(int capacidadeMax) : Lista<T>(), inicio(nullptr), tamanhoAtual(0), capacidadeMax(capacidadeMax) {}
+    
+    ListaLigada(int capacidade = 100) : capacidadeMaxima(capacidade), tamanhoAtual(0), inicio(nullptr), fim(nullptr) {}
 
-    ~ListaLigada() {
-        while (inicio != nullptr) {
-            remove(1);
+    
+    void insere(const T& item) override { //complexidade O(1)
+        if (tamanhoAtual >= capacidadeMaxima) {  
+            throw std::runtime_error("Lista cheia");
         }
+        No* novoNo = new No(item);  
+        if (fim != nullptr) { 
+            fim->proximo = novoNo;
+        } else { 
+            inicio = novoNo;
+        }
+        fim = novoNo;  
+        tamanhoAtual++; 
     }
 
-    void adiciona(const T& item) {
-        if (tamanhoAtual == capacidadeMax) {
-            throw runtime_error("Lista cheia");
-        }
-        //tratamento da lógica para apenas um item (feito)
-        No* novo = new No(item);
-        if (inicio == nullptr) {
-            inicio = novo;
-        } else {
-            No* atual = inicio;
-            while (atual->prox != nullptr) {
-                atual = atual->prox;
-            }
-            atual->prox = novo;
-        }
-        tamanhoAtual++;
-    }
-
-    T pega(int idx) const override {
+    T pega(int idx) const {
         if (idx < 1 || idx > tamanhoAtual) {
-            throw runtime_error("Indice invalido");
+            throw std::out_of_range("Índice inválido");
         }
+
         No* atual = inicio;
-        for (int i = 1; i < idx; i++) {
-            atual = atual->prox;
+        for (int i = 1; i < idx; ++i) {
+            atual = atual->proximo; 
         }
-        return atual->dado;
+
+        return atual->dado; 
     }
 
-    void insere(int idx, const T& item) override {
-        if (idx < 1 || idx > tamanhoAtual + 1) {
-            throw runtime_error("Indice invalido");
-        }
-        No* novo = new No(item);
-        if (idx == 1) {
-            novo->prox = inicio;
-            inicio = novo;
-        } else {
-            No* atual = inicio;
-            for (int i = 1; i < idx - 1; i++) {
-                atual = atual->prox;
-            }
-            novo->prox = atual->prox;
-            atual->prox = novo;
-        }
-        tamanhoAtual++;
-    }
-
-    void remove(int idx) override {
+    void remove(int idx) {
         if (idx < 1 || idx > tamanhoAtual) {
-            throw runtime_error("Indice invalido");
+            throw std::runtime_error("Índice inválido");
         }
-        No* removido;
-        if (idx == 1) {
-            removido = inicio;
-            inicio = inicio->prox;
+
+        No* anterior = nullptr;
+        No* atual = inicio;
+
+        for (int i = 1; i < idx; ++i) {
+            anterior = atual;
+            atual = atual->proximo;
+        }
+
+        if (anterior == nullptr) {
+            inicio = atual->proximo;  
         } else {
-            No* atual = inicio;
-            for (int i = 1; i < idx - 1; i++) {
-                atual = atual->prox;
-            }
-            removido = atual->prox;
-            atual->prox = removido->prox;
+            anterior->proximo = atual->proximo; 
         }
-        delete removido;
-        tamanhoAtual--;
+
+        if (atual == fim) {
+            fim = anterior; 
+        }
+
+        delete atual;
+        tamanhoAtual--;  
     }
 
-    void exibe() const override {
+    void exibe() const {
         No* atual = inicio;
         while (atual != nullptr) {
-            cerr << atual->dado << " ";
-            atual = atual->prox;
+            std::cout << atual->dado << " ";
+            atual = atual->proximo;
         }
-        cerr << endl;
+        std::cout << std::endl;
     }
 
-    int tamanho() const override {
+    int tamanho() const {
         return tamanhoAtual;
+    }
+
+    ~ListaLigada() {
+        No* atual = inicio;
+        while (atual != nullptr) {
+            No* temp = atual;
+            atual = atual->proximo;
+            delete temp;
+        }
     }
 };
 
