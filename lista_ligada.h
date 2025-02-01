@@ -58,22 +58,22 @@ public:
         No* anterior = nullptr;
         No* atual = inicio;
 
-        for (int i = 1; i < idx; ++i) {
+        for (int i = 1; i < idx; ++i) { 
             anterior = atual;
             atual = atual->proximo;
         }
-
-        if (anterior == nullptr) {
-            inicio = atual->proximo;  
-        } else {
+//usei anterior pois ele vai percorrer a lista e sempre vai saber quem é o anterior do número a ser retirado
+        if (anterior == nullptr) {  //para quando for o primeiro, por isso ele não tem um anterior
+            inicio = atual->proximo;  //ao remover o primeiro, o proximo elemento será considerado o atual 
+        } else { //se ele não for único, no caso uma lista com mais elementos, o anterior ao ser removido será considerado o próximo da lista=atual 
             anterior->proximo = atual->proximo; 
         }
 
-        if (atual == fim) {
+        if (atual == fim) { //aqui é para remover no final, é o último 
             fim = anterior; 
         }
 
-        delete atual;
+        delete atual; //para remover um elemento único, sozinho na lista
         tamanhoAtual--;  
     }
 
